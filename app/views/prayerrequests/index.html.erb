@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Prayerrequests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @prayerrequests.each do |prayerrequest| %>
+      <tr>
+        <td><%= prayerrequest.title %></td>
+        <td><%= prayerrequest.description %></td>
+        <td><%= link_to 'Show', prayerrequest %></td>
+        <td><%= link_to 'Edit', edit_prayerrequest_path(prayerrequest) %></td>
+        <td><%= link_to 'Destroy', prayerrequest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Prayerrequest', new_prayerrequest_path %>
